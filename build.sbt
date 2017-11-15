@@ -20,3 +20,10 @@ lazy val root = (project in file(".")).
       "org.scalatest"     %% "scalatest"            % "3.0.1"         % Test
     )
   )
+
+// WartRemover Config
+// http://www.wartremover.org/doc/install-setup.html
+
+wartremoverErrors ++= Warts.allBut(Wart.Any, Wart.Nothing, Wart.Serializable)
+
+wartremoverWarnings ++= Seq(Wart.Any, Wart.Nothing, Wart.Serializable)
